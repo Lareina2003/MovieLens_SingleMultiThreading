@@ -147,7 +147,8 @@ namespace MovieLens.Controllers
                     Avg = g.Average(x => x.Score),
                     Count = g.Count()
                 })
-                .Where(x => x.Count >= 20)
+                .Where(x => x.Count >= (userFilter != null && userFilter.Count < 100 ? 5 : 20))
+
                 .OrderByDescending(x => x.Avg)
                 .ThenByDescending(x => x.Count)
                 .Take(topN)
