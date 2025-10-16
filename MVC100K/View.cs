@@ -20,7 +20,7 @@ namespace MovieLens.Views
                 sb.AppendLine($"{rank++},{r.MovieId},\"{r.Title}\",{r.Avg:F2},{r.Count}");
 
             File.WriteAllText(file, sb.ToString(), Encoding.UTF8);
-            Console.WriteLine($"✅ Report saved: {file}");
+            Console.WriteLine($"Report saved: {file}");
         }
     }
 }
